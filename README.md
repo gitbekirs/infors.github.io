@@ -1,39 +1,32 @@
-Worthy - Free Bootstrap Template
+Bilgi Güvenliği Farkındalık Eğitimi Web Stesi - Taslak Çalışma
 =======================================================================
 
-Worhty is a Multipurpose One Page Template based on Bootstrap 3 Framework. 
-You can use it for corporate, business and agency webpages as well as 
-portfolio and personal webpages.
+Bilgi Güvenliği Farkındalık Eğitimi Projesi için geliştirilen web sayfası çalışması.
 
-If you like the template and find it useful, please help us spread the word :-)
+Bu sayfayı kullanışlı bulduysanız bize katılın. İçerik olarak katkıda bulunacağınız materyalleri ve fikirlerinizi bize ileterek çalışmaya dahil olun :-)
 
-- Theme version: v1.0
-- Release Date: 13 Nov 2014
-- Author: HtmlCoder (http://htmlcoder.me)
-- Contact: http://htmlcoder.me/contact
+- Version: Beta v1.0
+- Yayınlanma Tarihi: 27 Kasım 2014
+- Yazar: Bekir ŞENGÖNÜL (https://github.com/gitbekirs)
+- İletişim: bekirsengonul66@gmail.com
 
-Live Preview
+Canlı Önizleme
 =======================================================================
-http://www.htmlcoder.me/preview/worthy/v.1.0
+https://gitbekirs.github.io/infors.github.io/
 
-License
+Lisans
 =======================================================================
-Worthy is released under the Creative Commons Attribution 3.0 License
-https://creativecommons.org/licenses/by/3.0/
+Bekir ŞENGÖNÜL Github Repository
 
-Credits
+Kaynaklar
 =======================================================================
 
-Demo images
-------------------------------------------------------
-- Unsplash by Crew - http://unsplash.com/
-
-Fonts
+Kullanılan Font ve İkonlar
 ------------------------------------------------------
 - Font Awesome by Dave Gandy - http://fortawesome.github.io/Font-Awesome/
 - Google Fonts - http://www.google.com/fonts
 
-Resources
+Arayüz Kütüphaneleri
 ------------------------------------------------------
 - Bootstrap Framework by @mdo and @fat - http://getbootstrap.com/
 - jQuery - https://jquery.org/
