@@ -1,0 +1,4 @@
+{
+  "ai.native.collaborator.model": "deepseek/deepseek-chat-v3-0324:free",
+  "ai.native.chat.model": "deepseek/deepseek-chat-v3-0324:free"
+}
