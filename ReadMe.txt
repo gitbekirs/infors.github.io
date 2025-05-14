@@ -1,9 +1,8 @@
-Bilgi Güvenliği Farkındalık Eğitimi Web Stesi - Taslak Çalışma
+Bilgi Güvenliği Farkındalık Eğitimi
 =======================================================================
 
 Bilgi Güvenliği Farkındalık Eğitimi Projesi için geliştirilen web sayfası çalışması.
 
-Bu sayfayı kullanışlı bulduysanız bize katılın. İçerik olarak katkıda bulunacağınız materyalleri ve fikirlerinizi bize ileterek çalışmaya dahil olun :-)
 
 - Version: Beta v1.0
 - Yayınlanma Tarihi: 27 Kasım 2014
