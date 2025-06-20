@@ -356,6 +356,90 @@
             transition: max-height 0.5s ease-in;
             /* Animasyon */
         }
+
+        /* ========== SUNUMLAR BÖLÜMÜ STİLLERİ ========== */
+
+        /* Bölümün genel kapsayıcısı */
+        .presentations-section {
+            padding-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        /* Bölüm başlığı için stil */
+        .section-title-presentations {
+            text-align: center;
+            /* Başlığı ortala */
+            font-size: 2.2em;
+            /* Yazı boyutunu büyüt */
+            color: #333;
+            /* Koyu bir renk ver */
+            margin-bottom: 40px;
+            /* Alt boşluğu artır */
+            font-weight: 600;
+            /* Yazıyı biraz kalınlaştır */
+        }
+
+        /* Sunum butonlarını içeren grid yapısı */
+        .presentations-grid {
+            display: grid;
+            /* Responsive tasarımın anahtarı: 
+       - Sığdığı kadar sütun oluştur (auto-fit).
+       - Her sütun en az 280px, en fazla 1fr (eşit paylaşım) olsun.
+       - Bu sayede ekran küçüldükçe sütun sayısı otomatik olarak azalır. */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            /* Butonlar arası boşluk */
+        }
+
+        /* Sunum butonu temel stilleri */
+        .presentation-button {
+            display: flex;
+            /* İçindeki ikon ve metni hizalamak için */
+            align-items: center;
+            /* Dikeyde ortala */
+            background-color: #007bff;
+            /* Göz alıcı bir mavi */
+            color: #ffffff;
+            /* Beyaz yazı rengi */
+            padding: 18px 25px;
+            /* İç boşluklar */
+            border-radius: 8px;
+            /* Yumuşak kenarlar */
+            text-decoration: none;
+            /* Link alt çizgisini kaldır */
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Hafif bir gölge */
+            transition: all 0.3s ease;
+            /* Tüm geçişler için yumuşak animasyon */
+        }
+
+        /* Butonun üzerine gelindiğindeki (hover) efektler */
+        .presentation-button:hover {
+            background-color: #0056b3;
+            /* Mavinin daha koyu bir tonu */
+            transform: translateY(-4px);
+            /* Hafif yukarı kalkma efekti */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            /* Gölgeyi belirginleştir */
+            color: #fff;
+            /* Yazı rengi değişmesin */
+        }
+
+        /* Buton içindeki ikonun stili */
+        .presentation-button .fa {
+            font-size: 1.8em;
+            /* İkonu büyüt */
+            margin-right: 15px;
+            /* İkon ile yazı arasına boşluk koy */
+            line-height: 1;
+        }
+
+        /* Buton içindeki metnin stili */
+        .presentation-button span {
+            line-height: 1.3;
+        }
     </style>
 
 </head>
@@ -736,31 +820,41 @@
                 </div>
             </div>
         </div>
-        <div class="container" style="margin-top: 5%;">
+        <div class="container presentations-section" style="margin-top: 5%;">
 
+            <h3 class="section-title-presentations">Sunumlar</h3>
 
-            <h3 class="text-green-300">Sunumlar</h3>
-            <ul>
-                <li>
-                    <a href="Files/Sunum1_BilgiGüvenliğineGiriş.pptx">1 - Bilgi Güvenliğine Giriş</a>
-                </li>
-                <li>
-                    <a href="Files/Sunum2_SiberTehditlerveSaldırılar.pptx">2 - Siber Tehditler ve Saldırılar</a>
-                </li>
-                <li>
-                    <a href="Files/Sunum3_RiskYönetimiveGüvenlikKontrolleri.pptx">3 - Risk Yönetimi ve Güvenlik
-                        Kontrolleri</a>
-                </li>
-                <li>
-                    <a href="Files/Sunum4_TemelGüvenlikveInternetGüvenliği.pptx">4 - Temel Güvenlik ve Internet
-                        Güvenliği</a>
-                </li>
-                <li>
-                    <a href="Files/Sunum5_BilgiGüvenliğiYeniTeknolojilerTrendler.pptx">5 - Bilgi Güvenliği Yeni
-                        Teknolojiler ve Gelecek Trendler</a>
-                </li>
-            </ul>
+            <div class="presentations-grid">
 
+                <a href="Files/Sunum1_BilgiGüvenliğineGiriş.pptx" class="presentation-button" target="_blank">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                    <span>1 - Bilgi Güvenliğine Giriş</span>
+                </a>
+
+                <a href="Files/Sunum2_SiberTehditlerveSaldırılar.pptx" class="presentation-button" target="_blank">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                    <span>2 - Siber Tehditler ve Saldırılar</span>
+                </a>
+
+                <a href="Files/Sunum3_RiskYönetimiveGüvenlikKontrolleri.pptx" class="presentation-button"
+                    target="_blank">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                    <span>3 - Risk Yönetimi ve Güvenlik Kontrolleri</span>
+                </a>
+
+                <a href="Files/Sunum4_TemelGüvenlikveInternetGüvenliği.pptx" class="presentation-button"
+                    target="_blank">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                    <span>4 - Temel Güvenlik ve İnternet Güvenliği</span>
+                </a>
+
+                <a href="Files/Sunum5_BilgiGüvenliğiYeniTeknolojilerTrendler.pptx" class="presentation-button"
+                    target="_blank">
+                    <i class="fa fa-file-powerpoint-o"></i>
+                    <span>5 - Yeni Teknolojiler ve Gelecek Trendler</span>
+                </a>
+
+            </div>
         </div>
     </div>
 
