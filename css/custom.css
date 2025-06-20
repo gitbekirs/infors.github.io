@@ -1,9 +1,119 @@
 /*
-Theme Name: Worthy - Free Powerful Theme by HtmlCoder
-Author:HtmlCoder
-Author URI:http://www.htmlcoder.me
-Version:1.0.0
-Created:November 2014
-License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
-File Description: Place here your custom CSS styles
+================================================================
+Worthy Projesi için Özel CSS Stilleri
+================================================================
+1. Paydaşlar Logo Kaydırma Animasyonu
+2. Mobil Menü ve Görünüm Düzeltmeleri
+================================================================
 */
+
+/* * 1. PAYDAŞLAR LOGO KAYDIRMA ANİMASYONU
+ * ----------------------------------------------- 
+ */
+
+/* Logo Kaydırma Alanı */
+.logo-slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Hareket Eden Şerit */
+.logo-slider-track {
+    display: flex;
+    /* Her kartın genişliği 280px * 10 kart = 2800px */
+    width: calc(280px * 10);
+    animation: scroll-left 40s linear infinite;
+}
+
+/* Animasyon Tanımı */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Toplam genişliğin yarısı kadar kaydır */
+        transform: translateX(calc(-280px * 5));
+    }
+}
+
+/* Fare üzerine gelince animasyonu durdur */
+.logo-slider-container:hover .logo-slider-track {
+    animation-play-state: paused;
+}
+
+/* Sadece slider içindeki .our-partner kartlarına uygulanacak stiller */
+.logo-slider-track .our-partner {
+    flex-shrink: 0;          /* Kartların sıkışmasını engelle */
+    width: 250px;            /* Her bir kart için sabit genişlik */
+    margin: 15px;            /* Kartlar arasına boşluk koy */
+    cursor: pointer;
+    
+    /* style.css'den gelen dikey boşlukları koru */
+    padding-top: 30px;
+    padding-bottom: 66px;    /* Alt bar için boşluğu koru */
+    margin-bottom: 15px;
+}
+
+/* Resimlerin üzerine gelince oluşan büyüme efektini daha belirgin hale getirelim */
+.logo-slider-track .our-partner:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+
+/* * 2. MOBİL MENÜ VE GÖRÜNÜM DÜZELTMELERİ
+ * ----------------------------------------------- 
+ */
+
+/* BÜTÜN EKRANLAR: Scroll sonrası sabitlenen menüdeki yazı renklerini ayarla */
+body.fixed-header-on .header .site-name a,
+body.fixed-header-on .header .site-slogan {
+    color: #FFFFFF;
+}
+
+/* TABLET VE MOBİL CİHAZLAR (991px ve altı) */
+@media (max-width: 991px) {
+    /* Sabit menüde gizlenen logo ve yazıları görünür yap */
+    body.fixed-header-on .header .logo,
+    body.fixed-header-on .header .site-name,
+    body.fixed-header-on .header .site-slogan {
+        display: block !important; /* style.css'deki gizleme kuralını geçersiz kıl */
+    }
+
+    /* Görünür yapılan yazıların kapsayıcısını hizala */
+    body.fixed-header-on .header .site-name-and-slogan {
+        display: block;
+        float: left;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+}
+
+/* SADECE MOBİL CİHAZLAR (767px ve altı) */
+@media (max-width: 767px) {
+    /* Sayfa kaydırıldığında menünün üste sabitlenmesini sağlar */
+    body.fixed-header-on .header.navbar-fixed-top {
+        position: fixed;
+    }
+
+    /* Mobil menü açıldığında (collapse) arkaplan rengi ekler */
+    .navbar-default .navbar-collapse.in {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    /* Sabit menüdeki yatay taşma sorununu çözer */
+    body.fixed-header-on .header.navbar-fixed-top .container-fluid,
+    body.fixed-header-on .header.navbar-fixed-top .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Taşma düzeltildikten sonra buton ve logoya kenar boşluğu ekle */
+    .navbar-header .navbar-toggle {
+        margin-right: 15px;
+    }
+    body.fixed-header-on .header .logo {
+        margin-left: 15px;
+    }
+}

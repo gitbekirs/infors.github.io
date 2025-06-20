@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Bilgi Güvenliği Farkındalık Eğitimi Programı</title>
+    <meta name="description" content="Bilgi Güvenliği Farkındalık Eğitimi Programı">
+    <meta name="author" content="Bekir ŞENGÖNÜL">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Web Fonts -->
+    <!-- <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="css/animations.css" rel="stylesheet">
+
+    <!-- Worthy core CSS file -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link href="css/custom.css" rel="stylesheet">
+
+
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31626633-30"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-31626633-30');
+
+  
+       function siteyeGit(site){
+            if(site==='youtube')
+            window.open('https://www.youtube.com/@ywinfosec','_blank');
+
+            if(site==='x')
+            window.open('https://www.x.com/ywinfosec','_blank');
+
+            if(site==='instagram')
+            window.open('https://www.instagram.com/ywinfosec/','_blank');
+
+            if(site==='facebook')
+            window.open('https://www.facebook.com/','_blank');
+        }
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    // Sayfadaki tüm gün başlıklarını seç
+    const dayTitles = document.querySelectorAll('.day-title');
+
+    // Her bir başlık için bir olay dinleyici ekle
+    dayTitles.forEach(title => {
+        title.addEventListener('click', function() {
+            // Tıklanan başlığın ait olduğu .day-card elementini bul
+            const currentCard = this.parentElement;
+
+            // Halihazırda açık olan başka bir kart var mı diye kontrol et
+            const alreadyActiveCard = document.querySelector('.day-card.active');
+            
+            // Eğer açık bir kart varsa VE bu kart şu an tıklanan kart değilse, onu kapat
+            if (alreadyActiveCard && alreadyActiveCard !== currentCard) {
+                alreadyActiveCard.classList.remove('active');
+            }
+
+            // Tıklanan kartın "active" sınıfını aç/kapat (toggle)
+            // Eğer kapalıysa açar, açıksa kapatır.
+            currentCard.classList.toggle('active');
+        });
+    });
+});
+    </script>
+
+    
+<style>
+    /* Genel Stil */
+/* body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+} */
+
+.header{
+    background-color:#616161;
+}
+.main-title {
+    text-align: center;
+    color: #e74c3c;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    color: #34495e;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+/* Etkinlik Detayları Stili */
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: space-between; /* Öğeleri eşit boşlukla dağıt */
+}
+
+.detail-item {
+    flex: 1 1 calc(50% - 15px); /* Geniş ekranlarda iki sütun */
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-width: 280px; /* Küçük ekranlarda en az bu kadar geniş olsun */
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #2a4593;
+    display: block; /* Etiketin kendi satırında olmasını sağlar */
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    color: #555;
+}
+
+/* Etkinlik Programı Stili */
+/* Etkinlik Programı Stili */
+/* Etkinlik Programı Stili */
+.activity-schedule {
+    display: flex; /* Flexbox kullan */
+    flex-direction: column; /* Öğeleri dikeyde sırala (alt alta) */
+    gap: 20px; /* Her bir 'gün kartı' arasında boşluk */
+    /* grid ile ilgili özellikler kaldırıldı */
+}
+
+.day-card {
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 100%; /* Bulunduğu alanın tüm genişliğini kapla */
+    box-sizing: border-box; /* padding'in width'i etkilememesi için */
+    
+    display: flex; /* İçindeki öğeleri yönetmek için flexbox */
+    flex-direction: column; /* İçindeki öğeleri dikeyde sırala */
+}
+
+.day-card:hover {
+    /* transform: translateY(-5px); */
+}
+
+/* Diğer CSS kodları aynı kalacak */
+
+.day-title {
+    color: #2a4593;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+     transition: color 0.3s ease; /* Renk değişimini 0.3 saniyede yumuşakça yap */
+}
+
+/* Açık (aktif) olan günün başlık rengini kırmızı yapar */
+.day-card.active .day-title {
+    color: #e74c3c;
+}
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-list li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-left: 5px solid #3498db;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column; /* Küçük ekranlarda alt alta */
+    align-items: flex-start;
+}
+
+.activity-list li:last-child {
+    margin-bottom: 0;
+}
+
+.time {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 5px; /* Küçük ekranlarda açıklamayla arasına boşluk */
+    flex-shrink: 0; /* Küçülmesini engelle */
+    width: 100px; /* Sabit genişlik */
+}
+
+.activity-description {
+    color: #333;
+    flex-grow: 1; /* Mevcut alanı doldur */
+}
+
+/* Responsive Düzenlemeler */
+@media (min-width: 768px) {
+    .detail-item {
+        flex: 1 1 calc(33.333% - 15px); /* Orta ekranlarda üç sütun */
+    }
+    .activity-list li {
+        flex-direction: row; /* Geniş ekranlarda yan yana */
+        align-items: center;
+    }
+    .time {
+        margin-right: 15px; /* Yan yana dururken araya boşluk */
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .detail-item {
+        flex: 1 1 calc(25% - 15px); /* Büyük ekranlarda dört sütun */
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2em;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .day-title {
+        font-size: 1.3em;
+    }
+    .container {
+        padding: 10px;
+    }
+    .detail-item {
+        flex: 1 1 100%; /* Çok küçük ekranlarda tek sütun */
+    }
+}
+
+
+/* Gün başlıklarının tıklanabilir olduğunu belirtmek için fare imlecini değiştirir */
+.day-title {
+    cursor: pointer;
+    position: relative; /* Artı/Eksi işareti için konumlandırma */
+    padding-right: 25px; /* İşaret için sağda boşluk bırak */
+}
+
+/* Artı/Eksi işareti için temel stiller */
+.day-title::after {
+    content: '+'; /* Başlangıçta artı işareti göster */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Aktif olan başlığın işaretini eksiye çevir */
+.day-card.active .day-title::after {
+    content: '−'; /* Aktif olduğunda eksi işareti göster */
+}
+
+/* Etkinlik listesini varsayılan olarak gizle */
+.activity-list {
+    /* display: none; yerine bu yöntemi kullanarak animasyon ekleyebiliriz */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Açılma/kapanma animasyonu */
+}
+
+/* "active" sınıfı eklendiğinde etkinlik listesini göster */
+.day-card.active .activity-list {
+    max-height: 1000px; /* İçeriğin sığacağı kadar büyük bir değer */
+    transition: max-height 0.5s ease-in; /* Animasyon */
+}
+</style>
+
+</head>
+
+<body class="no-trans">
+    <!-- scrollToTop -->
+    <!-- ================ -->
+    <div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+    <!-- header start -->
+    <!-- ================ -->
+    <header class="header fixed clearfix navbar navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <!-- header-left start -->
+                    <!-- ================ -->
+                   <!--  <div class="header-left clearfix"  onmouseover="document.getElementById('logo').src='images/logo_negative.png'"
+                    onmouseout="document.getElementById('logo').src='images/logo.png'"> -->
+               
+                    <div class="header-left clearfix">
+                        <!-- logo -->
+                        <div class="logo smooth-scroll">
+                            <a href="index.html"><img id="logo" src="images/logo.png" alt="yw-infosec"></a>
+                        </div>
+
+                        <!-- name-and-slogan -->
+                        <div class="site-name-and-slogan smooth-scroll">
+                            <div class="site-name"><a href="index.html">Bilgi Güvenliği</a></div>
+                            <div class="site-slogan">&nbsp;Bilgi Güvenliği Farkındalık Eğitimi Programı</div>
+                        </div>
+
+                    </div>
+                    <!-- header-left end -->
+
+                </div>
+                <div class="col-md-8">
+
+                    <!-- header-right start -->
+                    <!-- ================ -->
+                    <div class="header-right clearfix">
+
+                        <!-- main-navigation start -->
+                        <!-- ================ -->
+                        <div class="main-navigation animated">
+
+                            <!-- navbar start -->
+                            <!-- ================ -->
+                            <nav class="navbar navbar-default" role="navigation">
+                                <div class="container-fluid">
+
+                                    <!-- Toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+                                    <div class="collapse navbar-collapse scrollspy smooth-scroll"
+                                        id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="active"><a href="index.html"><i class="fa fa-solid fa-home"></i></a>
+                                            </li>
+                                            <li><a href="index.html#about">Hakkında</a></li>
+                                            <!-- <li><a href="#ourteam">Proje Ekibi</a></li> -->
+                                            <li><a href="index.html#services">Eğitimler</a></li>
+                                            <li><a href="index.html#portfolio">Etkinlikler</a></li>
+                                            <li><a href="index.html#partners">Paydaşlar</a></li>
+                                            <li><a href="index.html#contact">İletişim</a></li>
+                                            <!-- <li><a href="logo.html">logo</a></li> -->
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </nav>
+                            <!-- navbar end -->
+
+                        </div>
+                        <!-- main-navigation end -->
+
+                    </div>
+                    <!-- header-right end -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- section start -->
+    <!-- ================ -->
+    <div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
+         <div class="container" style="margin-top: 5%;">
+            
+        <p class="main-title">ETKİNLİK PROGRAMI</p>
+
+
+        <div class="event-details">
+            <div class="detail-item">
+                <span class="detail-label">Etkinlik Adı:</span>
+                <span class="detail-value">Gençlik Çalışanlarının Bilgi Güvenliği Farkındalığının Artırılması</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Etkinlik:</span>
+                <span class="detail-value">KA153-YOU 27551F21</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Katılımcı Kuruluşlar:</span>
+                <span class="detail-value">
+                    1- Bilgi İşlem Dairesi Başkanlığı<br>
+                    2- Station de Jeunesse
+                </span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Şehir:</span>
+                <span class="detail-value">Ankara</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Ülke:</span>
+                <span class="detail-value">Türkiye</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Başlangıç Tarihi:</span>
+                <span class="detail-value">23.06.2025</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Bitiş Tarihi:</span>
+                <span class="detail-value">29.06.2025</span>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="activity-schedule">
+            <div class="day-card">
+                <h3 class="day-title">23.06.2025 PAZARTESİ (GÜN 1)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">20.00-23.00</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">24.06.2025 SALI (GÜN 2)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">10.45-11.45</span>
+                        <span class="activity-description">Tanışma ve Kurum Tanıtımı / Introduction Speech</span>
+                    </li>
+                    <li>
+                        <span class="time">12.00-12.45</span>
+                        <span class="activity-description">Self-Assessment Anketi, Tartışma/Eğitim: Bilgi Güvenliği Nedir?</span>
+                    </li>
+                    <li>
+                        <span class="time">12.45-13.30</span>
+                        <span class="activity-description">Öğle Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">14:00-15:30</span>
+                        <span class="activity-description">Eğitim: Siber Tehditler ve Saldırılar (Bilgi Güvenliği ve Siber Güvenlik Temel Kavramları)</span>
+                    </li>
+                    <li>
+                        <span class="time">15:30-16:00</span>
+                        <span class="activity-description">Ara Öğün</span>
+                    </li>
+                    <li>
+                        <span class="time">16.00-17.00</span>
+                        <span class="activity-description">Serbest Zaman</span>
+                    </li>
+                    <li>
+                        <span class="time">18.00-19.30</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">19.30-20.30</span>
+                        <span class="activity-description">Gün Değerlendirme Toplantısı, Günün En İyi Katılımcısının Seçilmesi</span>
+                    </li>
+                    <li>
+                        <span class="time">20.30-22.00</span>
+                        <span class="activity-description">Serbest Zaman, Kutu Oyunları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">25.06.2025 ÇARŞAMBA (GÜN 3)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">10.15-12.00</span>
+                        <span class="activity-description">Eğitim: Risk Yönetimi ve Güvenlik Kontrolleri</span>
+                    </li>
+                    <li>
+                        <span class="time">12.00-13.30</span>
+                        <span class="activity-description">Öğle Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">14.00-15.30</span>
+                        <span class="activity-description">Serbest Zaman</span>
+                    </li>
+                    <li>
+                        <span class="time">15:30-16:15</span>
+                        <span class="activity-description">Ara Öğün</span>
+                    </li>
+                    <li>
+                        <span class="time">16.30-18.30</span>
+                        <span class="activity-description">Voleybol Turnuvası</span>
+                    </li>
+                    <li>
+                        <span class="time">18.30-19.30</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">19.30-20.00</span>
+                        <span class="activity-description">Gün Değerlendirme Toplantısı, Etkinlik Ödülleri</span>
+                    </li>
+                    <li>
+                        <span class="time">20.30-22.00</span>
+                        <span class="activity-description">Serbest Zaman, Kutu Oyunları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">26.06.2025 PERŞEMBE (GÜN 4)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">10.15-12.00</span>
+                        <span class="activity-description">Eğitim: Temel Güvenlik Uygulamaları ve Güvenli İnternet Davranışları</span>
+                    </li>
+                    <li>
+                        <span class="time">12.00-13.00</span>
+                        <span class="activity-description">Öğle Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">13:15-14:00</span>
+                        <span class="activity-description">Göl Tekne Turu</span>
+                    </li>
+                    <li>
+                        <span class="time">14:15-15:15</span>
+                        <span class="activity-description">Gölbaşı Tulumtaş Mağarası ziyareti</span>
+                    </li>
+                    <li>
+                        <span class="time">15:30-16:30</span>
+                        <span class="activity-description">Somut Olmayan Kültürel Miras Müzesi ziyareti</span>
+                    </li>
+                    <li>
+                        <span class="time">17:00-18:30</span>
+                        <span class="activity-description">Göl Kenarı Doğa Yürüyüş ve Kahve Molası</span>
+                    </li>
+                    <li>
+                        <span class="time">18.30-19:30</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">19.30-20.00</span>
+                        <span class="activity-description">Gün Değerlendirme Toplantısı, Günün En İyi Katılımcısının Seçilmesi</span>
+                    </li>
+                    <li>
+                        <span class="time">20.30-22.00</span>
+                        <span class="activity-description">Serbest Zaman, Kutu Oyunları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">27.06.2025 CUMA (GÜN 5)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">10.15-12.00</span>
+                        <span class="activity-description">Eğitim: Bilgi Güvenliğinde Yeni Teknolojiler ve Gelecek Trendler <br>Beyin Fırtınası: Kurumlarda Bilgi Güvenliği Eğitimlerinin Yaygınlaştırılması</span>
+                    </li>
+                    <li>
+                        <span class="time">12.00-13.30</span>
+                        <span class="activity-description">Öğle Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">14.00-15.00</span>
+                        <span class="activity-description">Etkinlik</span>
+                    </li>
+                    <li>
+                        <span class="time">15.00-16.00</span>
+                        <span class="activity-description">Ara Öğün</span>
+                    </li>
+                    <li>
+                        <span class="time">16.00-18.00</span>
+                        <span class="activity-description">Etkinlik</span>
+                    </li>
+                    <li>
+                        <span class="time">19.00-20.30</span>
+                        <span class="activity-description">Akşam Yemeği (Türk Gecesi/Mangal)</span>
+                    </li>
+                    <li>
+                        <span class="time">19.30-20.00</span>
+                        <span class="activity-description">Müzik Dinletisi</span>
+                    </li>
+                    <li>
+                        <span class="time">20.30-22.00</span>
+                        <span class="activity-description">Serbest Zaman, Kutu Oyunları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">28.06.2025 CUMARTESİ (GÜN 6)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">10:30-18:00</span>
+                        <span class="activity-description">Ankara Turu</span>
+                    </li>
+                    <li>
+                        <span class="time">18.30-19:30</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">19.30-20.00</span>
+                        <span class="activity-description">Gün Değerlendirme Toplantısı, Günün En İyi Katılımcısının Seçilmesi</span>
+                    </li>
+                    <li>
+                        <span class="time">20.30-22.00</span>
+                        <span class="activity-description">Serbest Zaman, Kutu Oyunları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <h3 class="day-title">29.06.2025 PAZAR (GÜN 7 / DÖNÜŞ GÜNÜ)</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span class="time">08.00-10.00</span>
+                        <span class="activity-description">Kahvaltı</span>
+                    </li>
+                    <li>
+                        <span class="time">12:00-13:30</span>
+                        <span class="activity-description">Öğle Yemeği</span>
+                    </li>
+                    <li>
+                        <span class="time">18.30-19:30</span>
+                        <span class="activity-description">Akşam Yemeği</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            </div>
+     <div class="container" style="margin-top: 5%;">
+      
+           
+                <h3 class="text-green-300">Sunumlar</h3>
+                <ul>
+                    <li>
+                        <a href="Files/Sunum1_BilgiGüvenliğineGiriş.pptx">1 - Bilgi Güvenliğine Giriş</a>
+                    </li>
+                     <li>
+                        <a href="Files/Sunum2_SiberTehditlerveSaldırılar.pptx">2 - Siber Tehditler ve Saldırılar</a>
+                    </li>
+                     <li>
+                        <a href="Files/Sunum3_RiskYönetimiveGüvenlikKontrolleri.pptx">3 - Risk Yönetimi ve Güvenlik Kontrolleri</a>
+                    </li>
+                     <li>
+                        <a href="Files/Sunum4_TemelGüvenlikveInternetGüvenliği.pptx">4 - Temel Güvenlik ve Internet Güvenliği</a>
+                    </li>
+                     <li>
+                        <a href="Files/Sunum5_BilgiGüvenliğiYeniTeknolojilerTrendler.pptx">5 - Bilgi Güvenliği Yeni Teknolojiler ve Gelecek Trendler</a>
+                    </li>
+                </ul>
+   
+        </div>
+     </div>
+    </div>
+    </div>
+    <!-- section end -->
+
+
+
+
+
+    <!-- footer start -->
+    <!-- ================ -->
+    <footer id="footer">
+
+        <!-- .footer start -->
+        <!-- ================ -->
+        <div class="footer section">
+            <div class="container">
+
+        </div>
+        </div>
+        <!-- .footer end -->
+        <!-- .subfooter start -->
+        <!-- ================ -->
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-center">© 2025 - <a>yw-infosec.gsb.gov.tr</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .subfooter end -->
+
+    </footer>
+    <!-- footer end -->
+    <!-- JavaScript files placed at the end of the document so the pages load faster
+    ================================================== -->
+    <!-- Jquery and Bootstap core js files -->
+    <script type="text/javascript" src="plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Modernizr javascript -->
+    <script type="text/javascript" src="plugins/modernizr.js"></script>
+
+    <!-- Isotope javascript -->
+    <script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+    <!-- Backstretch javascript -->
+    <script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
+
+    <!-- Appear javascript -->
+    <script type="text/javascript" src="plugins/jquery.appear.js"></script>
+
+    <!-- Initialization of Plugins -->
+    <script type="text/javascript" src="js/template.js"></script>
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+
+</html>

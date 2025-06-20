@@ -16,7 +16,7 @@
 		//-----------------------------------------------
 		$(window).scroll(function() {
 			if (($(".header.fixed").length > 0)) { 
-				if(($(this).scrollTop() > 0) && ($(window).width() > 767)) {
+				if(($(this).scrollTop() > 0)) { // This condition was changed
 					$("body").addClass("fixed-header-on");
 				} else {
 					$("body").removeClass("fixed-header-on");
@@ -26,7 +26,7 @@
 
 		$(window).load(function() {
 			if (($(".header.fixed").length > 0)) { 
-				if(($(this).scrollTop() > 0) && ($(window).width() > 767)) {
+				if(($(this).scrollTop() > 0)) { // This condition was changed
 					$("body").addClass("fixed-header-on");
 				} else {
 					$("body").removeClass("fixed-header-on");
